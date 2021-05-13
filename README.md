@@ -16,7 +16,7 @@
 
  - ### How to run ts code?
  > Example 1 : add.ts 
- > To run this `node app.js` 
+ > To run this `tsc app.ts   node app.js` 
  ``` typescript
     function add(num1: number, num2: number): number {
         return num1 + num2;
