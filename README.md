@@ -34,6 +34,19 @@
     console.log(add(2,3));
  ```
  This will create a **js** compiled file called `add.js`, which can be executed using `node add.js`
-
-
  ---
+ ## Typeorm
+ ![Typeorm](/typeorm.png)
+ ### About Typeorm
+ TypeORM is an ORM that can run in NodeJS and can be used with TypeScript and JavaScript (ES5, ES6, ES7, ES8).  
+TypeORM supports both Active Record and Data Mapper patterns, unlike all other JavaScript ORMs currently in existence, which means you can write high quality, loosely coupled, scalable, maintainable applications the most productive way.
+
+#### Install Typeorm
+``` typescript
+npm install typeorm --save
+```
+> Install Database Driver 
+ ``` bash
+  npm install pg
+  ```
+  
