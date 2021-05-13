@@ -13,6 +13,10 @@
  ``` typescript
  npm i -g typescript
  ```
+ #### Initializing a Typeorm project
+ ``` ts
+ tsc --init
+ ```
 
  - ### How to run ts code?
  > Example 1 : add.ts 
@@ -48,4 +52,7 @@ npm install typeorm --save
  ``` bash
   npm install pg
   ```
+
+#### Initializing a Typeorm project
+``` typeorm --init```
   
