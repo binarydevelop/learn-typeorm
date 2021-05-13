@@ -1,11 +1,12 @@
 {
    "name": "learn-typeorm",
    "version": "1.0.0",
-   "description": "![Typescript](/ts.jpg)\r  **Typescript**  is a *superset* of Javascript. A language building up on Javascript.\r ### About Typescript:\r  - Adds new Features & advantages to Javascript.\r  - Browser can't execute it.\r  - Typescript is a powerful compiler which is used to compile your `ts` code to `js` code.\r  - Features are compiled to Js workarounds.\r  - It also adds `type` which results in less error prone code.",
+   "description": "Typescript and Typeorm",
    "main": "app.js",
    "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1",
-      "start": "ts-node src/app.ts"
+      "start": "ts-node src/app.ts",
+      "start:dev": "tsc && node ./build/app.js"
    },
    "repository": {
       "type": "git",
