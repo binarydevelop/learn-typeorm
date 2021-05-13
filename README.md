@@ -15,9 +15,19 @@
  ```
 
  - ### How to run ts code?
- > Example: add.ts
+ > Example 1 : add.ts 
+ > To run this `node app.js` 
  ``` typescript
     function add(num1: number, num2: number): number {
+        return num1 + num2;
+    }
+
+    console.log(add(2,3));
+ ```
+ > Example 2 : add.ts
+ > To run this `ts-node app.ts`
+ ``` typescript
+      function add(num1: number, num2: number): number {
         return num1 + num2;
     }
 
