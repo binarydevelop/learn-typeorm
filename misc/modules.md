@@ -1,6 +1,6 @@
 ## Modules
 --- 
-- Starting with ECMAScript 2015, JavaScript has a concept of modules. TypeScript shares this concept.
+Starting with ECMAScript 2015, JavaScript has a concept of modules. TypeScript shares this concept.
 
 ### Working of Module
 Variables functions, classes, etc. declared in a module are not visible outside the module unless they are explicitly exported using one of the export forms. Conversely, to consume a variable, function, class, interface, etc. exported from a different module, it has to be imported using one of the import forms.
@@ -84,3 +84,14 @@ console.log(y);
 // output will be 4
 
 ```
+
+
+#### - High Level Libraries
+1. ES5 - Core definitions for all ES3 and ES5 functionality
+2. ES2015 - Additional APIs available in ES2015 (also known as ES6) - array.find, Promise, Proxy, Symbol, Map, Set, Reflect, etc. (ES6)
+3. ES2016 - Additional APIs available in ES2016 - array.include, etc. (ES7)
+4. ES2017 - 	Additional APIs available in ES2017 - Object.entries, Object.values, Atomics, SharedArrayBuffer, date.formatToParts, typed arrays, etc.
+5. ES2018 - Additional APIs available in ES2018 - async iterables, promise.finally, Intl.PluralRules, rexexp.groups, etc.
+6. ES2019 - Additional APIs available in ES2019 - array.flat, array.flatMap, Object.fromEntries, string.trimStart, string.trimEnd, etc.
+7. ES2020 - Additional APIs available in ES2020 - string.matchAll, etc.
+8. ESNext - Additional APIs available in ESNext - This changes as the JavaScript specification evolves
