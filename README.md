@@ -1,7 +1,9 @@
 # learn-typeorm
+
  ## Typescript
  ![Typescript](/ts.jpg)
  **Typescript**  is a *superset* of Javascript. A language building up on Javascript.
+
 ### About Typescript:
  - Adds new Features & advantages to Javascript.
  - Browser can't execute it.
@@ -16,7 +18,10 @@
 
  - ### How to run ts code?
  > Example 1 : add.ts 
- > To run this `node app.js` 
+ > To run this ``` bash
+                tsc app.ts 
+                node app.js 
+                ``` 
  ``` typescript
     function add(num1: number, num2: number): number {
         return num1 + num2;
