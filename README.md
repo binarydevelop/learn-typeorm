@@ -33,7 +33,7 @@
 
     console.log(add(2,3));
  ```
- #### This will create a **js** compiled file called `add.js`, which can be executed using `node add.js`
+ This will create a **js** compiled file called `add.js`, which can be executed using `node add.js`
  ---
  ## Typeorm
  ![Typeorm](/typeorm.png)
@@ -49,3 +49,4 @@ npm install typeorm --save
  ``` bash
   npm install pg
   ```
+  
