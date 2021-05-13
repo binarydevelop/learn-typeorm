@@ -1,5 +1,6 @@
 # learn-typeorm
  ## Typescript
+ ![Typescript](/ts.jpg)
  **Typescript**  is a *superset* of Javascript. A language building up on Javascript.
 ### About Typescript:
  - Adds new Features & advantages to Javascript.
