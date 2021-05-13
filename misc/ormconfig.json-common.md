@@ -1,3 +1,5 @@
+## orcmconfig.json
+---
 - This files contains the configuration to connect to your database
 - `synchronize:true` should be disabled for production
 - The configuration should contain the following options:
@@ -23,3 +25,4 @@
 }
 
 ```
+---
