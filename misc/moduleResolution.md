@@ -1,5 +1,11 @@
 ### Module resolution
 ---
+##### Contents
+- [Introduction](#Introduction)
+- [Relative vs. Non-relative module imports](#Relative vs. Non-relative module imports)
+- [Module Resolution Strategies](#Module Resolution Strategies)
+---
+#### Introduction
 Module resolution is the process the compiler uses to figure out what an import refers to. Consider an import statement like `import { a } from "moduleA";` in order to check any use of a, the compiler needs to know exactly what it represents, and will need to check its definition moduleA.
 
 At this point, the compiler will ask “what’s the shape of moduleA?”
