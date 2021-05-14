@@ -1,5 +1,10 @@
-## orcmconfig.json
+### orcmconfig.json
 ---
+#### Contents
+   1. [Introduction](#Introduction)
+   
+---
+### Introduction
 - This files contains the configuration to connect to your database
 - `synchronize:true` should be disabled for production
 - The configuration should contain the following options:

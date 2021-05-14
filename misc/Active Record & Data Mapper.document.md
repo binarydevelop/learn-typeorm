@@ -1,7 +1,14 @@
 ## Active Record vs Data Mapper
+---
+Contents
+1. [Introduction](#Introduction)
+    - [Active Record Example](#Example-1)
+    - [Data Mapper Example](#Example-2)
+---
+### Introduction
 Using the Active Record approach, you define all your query methods inside the model itself, and you save, remove, and load objects using model methods.
 
-#### Example:
+#### Example-1:
 
 ```typescript
 import {BaseEntity, Entity, PrimaryGeneratedColumn, Column} from "typeorm";
@@ -53,7 +60,7 @@ Using the Data Mapper approach, you define all your query methods in separate cl
 
 Simply said, data mapper is an approach to access your database within repositories instead of models.
 
-#### Example:
+#### Example-2:
 ```typescript
 import {Entity, PrimaryGeneratedColumn, Column} from "typeorm";
 

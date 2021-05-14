@@ -1,6 +1,10 @@
 ### package.json 
 ---
+#### Contents
+1. [Introduction](#Introduction)
 
+---
+### Introduction
 When we intialize a new node project and do `npm init ` we get several options to fill to build package.json
 To read about all the available [options](https://docs.npmjs.com/cli/v7/configuring-npm/package-json)
 Some common options are :

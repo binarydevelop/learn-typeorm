@@ -1,8 +1,15 @@
 ### tsconfig.json
 ---
+### Contents
+1. [Introduction](#Introduction)
+2. [Common Options](#Common)
+3. [All Available Options](#All)
+---
+#### Introduction
 - The presence of a tsconfig.json file in a directory indicates that the directory is the root of a       TypeScript project. The tsconfig.json file specifies the root files and the compiler options required to compile the project.
 - This file contains the typescript configuration that should be set in every Typescript Project.
 - If you have a `tsconfig.json` file then running tsc will build all the ts files. To enable watch mode we can use  `-w or  --watch`
+- To intialize a tsconfig we can use `tsc --init `
 - The Options are set as follows: 
 ``` typescript
 {
@@ -23,7 +30,7 @@
 ```
 [x] [Typescript Options available in tsconfig.json](https://www.typescriptlang.org/tsconfig)
 - There are several options whihch can be set in `tsconfig.json` but we will only deal with compiler options for now.
-
+### Common Options
 Option              |      Definition
 ------------------  | ----------------------
 target              | target tells TS which ES specification you want the final/transpiled code to support. If you configure it as ES5, TS will down compile the syntactic features to ES5, so any arrow functions () => {} in your code will be transformed to function () {}.
@@ -33,7 +40,7 @@ moduleResolution    | Specify the module resolution strategy: 'node' (Node.js) o
 outDir              | If specified, .js (as well as .d.ts, .js.map, etc.) files will be emitted into this directory. The directory structure of the original source files is preserved;
 emitDecoratorMetadata | The decorator metadata is needed if you want to reflect over the metadata at runtime.
 
-
+### All Available Options
 All compiler Options are listed below: 
 ``` ts
 {

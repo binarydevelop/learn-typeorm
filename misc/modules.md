@@ -1,5 +1,20 @@
 ## Modules
---- 
+---
+### Contents
+1. [Introduction](#Introduction)
+2. [Working of Module](#working)
+3. [Export](#Export)
+    - [Exporting a Declaration](#Exporting)
+    - [Export Statements](#statements)
+    - [Re-Exports](#Re-Exports)
+4. [Import](#Import)
+    - [Import a single export from a module](#single)
+    - [Import the entire module into a single variable, and use it to access the module exports](#entire)
+    - [Default exports](#Default)
+    -[High Level Libraries](#High)
+
+---
+#### Introduction 
 Starting with ECMAScript 2015, JavaScript has a concept of modules. TypeScript shares this concept.
 
 ### Working of Module
