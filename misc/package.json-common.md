@@ -57,3 +57,7 @@ devDependencies                     | packages which are required only during de
 `ts-node src/app.ts` will just compile the code and show the result.
 To build the dist folder you need to add a script like :
 ``` "start:dev": "tsc && node ./build/app.js" ```
+
+* scripts in package.json 
+- tsc will build the project and then will need to manually run using node 
+- ts-node is an npm package which allows the user to run typescript files directly, without the need for precompilation using tsc .  [doesn't generate build]
