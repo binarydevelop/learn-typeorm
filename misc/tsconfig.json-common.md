@@ -39,7 +39,7 @@ module              | Sets the module system for the program. [CommonJs, UMD, AM
 moduleResolution    | Specify the module resolution strategy: 'node' (Node.js) or 'classic' (used in TypeScript before the release of 1.6). Probably won’t need to use classic in modern code.
 outDir              | If specified, .js (as well as .d.ts, .js.map, etc.) files will be emitted into this directory. The directory structure of the original source files is preserved;
 emitDecoratorMetadata | The decorator metadata is needed if you want to reflect over the metadata at runtime.
-
+esModuleInterop      | With flag esModuleInterop we can import CommonJS modules in compliance with es6 modules spec.
 ### All Available Options
 All compiler Options are listed below: 
 ``` ts
@@ -114,3 +114,66 @@ All compiler Options are listed below:
   }
 }
 ```
+
+### Understanding esModuleInterop in tsconfig file - Problem statement
+Problem occurs when we want to import CommonJS module into ES6 module codebase.
+
+Before these flags we had to import CommonJS modules with star (* as something) import:
+``` ts
+// node_modules/moment/index.js
+exports = moment
+// index.ts file in our app
+import * as moment from 'moment'
+moment(); // not compliant with es6 module spec
+
+// transpiled js (simplified):
+const moment = require("moment");
+moment();
+We can see that * was somehow equivalent to exports variable. It worked fine, but it wasn't compliant with es6 modules spec. In spec, the namespace record in star import (moment in our case) can be only a plain object, not callable (moment() is not allowed).
+```
+> Solution
+With flag esModuleInterop we can import CommonJS modules in compliance with es6 modules spec. Now our import code looks like this:
+
+``` ts
+// index.ts file in our app
+import moment from 'moment'
+moment(); // compliant with es6 module spec
+
+// transpiled js with esModuleInterop (simplified):
+const moment = __importDefault(require('moment'));
+moment.default();
+```
+It works and it's perfectly valid with es6 modules spec, because moment is not namespace from star import, it's default import.
+
+But how does it work? As you can see, because we did a default import, we called the default property on a moment object. But we didn't declare a default property on the exports object in the moment library. The key is the __importDefault function. It assigns module (exports) to the default property for CommonJS modules:
+
+``` ts
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+```
+As you can see, we import es6 modules as they are, but CommonJS modules are wrapped into an object with the default key. This makes it possible to import defaults on CommonJS modules.
+
+__importStar does the similar job - it returns untouched esModules, but translates CommonJS modules into modules with a default property:
+
+``` ts
+// index.ts file in our app
+import * as moment from 'moment'
+
+// transpiled js with esModuleInterop (simplified):
+const moment = __importStar(require("moment"));
+// note that "moment" is now uncallable - ts will report error!
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+```
+### Synthetic imports
+And what about allowSyntheticDefaultImports - what is it for? Now the docs should be clear:
+
+> Allow default imports from modules with no default export. This does not affect code emit, just typechecking.
+
+In moment typings we don't have specified default export, and we shouldn't have, because it's available only with flag esModuleInterop on. So allowSyntheticDefaultImports will not report an error if we want to import default from a third-party module which doesn't have a default export.
