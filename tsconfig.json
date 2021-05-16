@@ -5,14 +5,15 @@
          "es6",
          "DOM"
       ],
-      "target": "es5",
+      "target": "es2017",
       "module": "commonjs",
       "moduleResolution": "node",
       "outDir": "build",
       "emitDecoratorMetadata": true,
       "experimentalDecorators": true,
       "sourceMap": true,
-      "esModuleInterop": true,   
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true,   
       "strict": true
    }
 }
