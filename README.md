@@ -56,3 +56,7 @@ npm install typeorm --save
 #### Initializing a Typeorm project
 ``` typeorm --init```
   
+
+## Database Model
+![Orders](/orders-db-model.png)
+![Students](/student-classes-db-model.png)
