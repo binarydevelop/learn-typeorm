@@ -3,7 +3,7 @@ import 'express-async-errors';
 
 import express from 'express';
 import cors from 'cors';
-import { errors as validationErrorsHandler } from 'celebrate';
+
 
 import createConnection from '@shared/infra/typeorm';
 import errorsHandler from '@shared/handlers/errorsHandler';
